@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="title" content="Should I do microservices ?" />
-    <meta name="description" content="Should I do microservices ?" />
+    <meta name="title" content="Should I do microservices ?"/>
+    <meta name="description" content="You already know the answer. You just need a website to send to your CTO."/>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://should-i-do-microservic.es/" />
-    <meta property="og:title" content="Should I do microservices ?" />
-    <meta property="og:description" content="Should I do microservices ?" />
-    <meta property="og:image" content="https://should-i-do-microservic.es/social-network.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://should-i-do-microservic.es/" />
-    <meta property="twitter:title" content="Should I do microservices ?" />
-    <meta property="twitter:description" content="Should I do microservices ?" />
-    <meta property="twitter:image" content="https://should-i-do-microservic.es/social-network.png" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://should-i-do-microservic.es/"/>
+    <meta property="og:title" content="Should I do microservices ?"/>
+    <meta property="og:description"
+          content="You already know the answer. You just need a website to send to your CTO."/>
+    <meta property="og:image" content="https://should-i-do-microservic.es/social-network.png"/>
+
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:url" content="https://should-i-do-microservic.es/"/>
+    <meta property="twitter:title" content="Should I do microservices ?"/>
+    <meta property="twitter:description"
+          content="You already know the answer. You just need a website to send to your CTO."/>
+    <meta property="twitter:image" content="https://should-i-do-microservic.es/social-network.png"/>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <title>Should I do microservices ?</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
     <style>
 
         body {
@@ -34,7 +39,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-family: Inter, serif;
+            font-family: Inter, sans-serif;
             color: #111827;
         }
 
@@ -46,13 +51,13 @@
             align-items: center;
         }
 
-        h2 {
+        h1 {
             font-size: 4rem;
         }
 
-        h1 {
+        h2 {
             font-size: 20rem;
-            margin: 50px 0;
+            margin: 30px 0;
             color: #dc2626;
             font-weight: 900;
         }
@@ -64,9 +69,81 @@
 
         p {
             text-align: center;
-            border-top : 1px solid black;
+            border-top: 1px solid #ddd;
             margin-top: 10px;
             padding: 20px 10px 0;
+        }
+
+        button {
+            background: none;
+            border: 1px solid #ccc;
+            padding: 8px 20px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #111827;
+            color: white;
+        }
+
+        dialog {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 0;
+            width: 100%;
+            max-width: min(1000px, 80vw);
+            max-height: 80dvh;
+            background: white;
+        }
+
+        dialog .dialog-container {
+            padding: 40px;
+            background: white;
+
+        }
+
+        dialog h3 {
+            margin-top: 0;
+        }
+
+        dialog h4 {
+            margin: 24px 0 4px;
+        }
+
+        dialog p {
+            color: #555;
+            text-align: left;
+            border: 0;
+            line-height: 1.6;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        dialog p a {
+            color: #999;
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+
+
+        dialog .dialog-footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px auto;
+        }
+
+        dialog .dialog-footer p {
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #ddd;
+            color: #888;
         }
 
         footer {
@@ -79,14 +156,91 @@
 </head>
 <body>
 <main>
-    <h2>Should I do microservices ?</h2>
-    <h1>No.</h1>
+    <h1>Should I do microservices ?</h1>
+    <h2>No.</h2>
     <h3>Keep it simple. Build a monolith.</h3>
     <p>Unless you're a massive GAFAM-scale company, microservices add unnecessary complexity.
         <br/>
         Microservices are an <b>organizational constraint</b>, not a technical solution.</p>
+
+    <button command="show-modal" commandfor="dialog">
+        But I really want to…
+    </button>
 </main>
 
-<footer><small>Created by <a href="https://kiui.io">Antoine Guespin</a></small></footer>
+<dialog id="dialog">
+    <div class="dialog-container">
+        <h3>OK. Let's talk about it.</h3>
+
+        <h4>It's not a technical decision, it's an organizational one.</h4>
+        <p>
+            Microservices were invented by companies with thousands of engineers who needed teams to deploy
+            independently.
+            Unless you have that problem, you're importing complexity for free.
+            As Martin Fowler puts it: almost every successful microservices story started as a monolith that got too
+            big,
+            and almost every project that started with microservices from scratch ended up in serious trouble.<br/>
+            <a href="https://martinfowler.com/bliki/MonolithFirst.html" target="_blank">→ martinfowler.com</a>
+        </p>
+
+
+        <h4>You'll build a distributed monolith.</h4>
+        <p>
+            Without rock-solid service boundaries (which take years to get right), you'll end up with the same tangled
+            mess ,except now your function calls go over the network. Kelsey Hightower said it best: instead of writing bad
+            code
+            in one place, you end up building bad infrastructure and deploying the bad code on top of it.<br/>
+            <a href="https://changelog.com/posts/monoliths-are-the-future" target="_blank">→ changelog.com</a>
+        </p>
+
+        <h4>Even Amazon regrets it.</h4>
+        <p>
+            In 2023, Amazon Prime Video's monitoring team moved from a distributed microservices architecture
+            back to a single process. The result: 90% cost reduction and better scalability.
+            Yes, Amazon saved money by <em>not using its own services</em>.
+            The original blog post has since been deleted, make of that what you will.<br/>
+            <a href="https://www.wudsn.com/productions/www/site/news/2023/2023-05-08-microservices-01.pdf"
+               target="_blank">→
+                Archived blog post (PDF)</a>
+        </p>
+
+        <h4>You don't have Netflix's problems.</h4>
+        <p>
+            Netflix runs over 1,000 microservices on AWS, backed by thousands of engineers
+            and a decade of custom tooling they had to build themselves (Eureka, Hystrix, Zuul, Conductor…).
+            You have a team of 4 and a deadline next month. These are not the same situation.<br/>
+            <a href="https://netflixtechblog.com/tagged/microservices" target="_blank">→ Netflix Tech Blog</a>
+        </p>
+
+        <h4>The tooling will eat you alive.</h4>
+        <p>
+            Kubernetes, Docker, service mesh, API gateway, distributed tracing, saga patterns, circuit breakers…
+            You wanted to ship a feature. Now you have a platform team.
+            Congratulations, you're maintaining infrastructure instead of building product.
+        </p>
+
+        <div class="dialog-footer">
+            <p><em>
+                Still want to do it? The best way to learn is to fail.<br/>
+                Just be ready to bear the consequences.
+            </em></p>
+            <button commandfor="dialog" command="close">Fine, I'll build a monolith.</button>
+        </div>
+    </div>
+</dialog>
+
+<footer>
+    <small>This site was built by <a href="https://kiui.io">Antoine Guespin</a> without Kubernetes, Docker, Scrum, or a
+        single Jira ticket. He slept 8 hours.</small>
+</footer>
 </body>
+<script>
+    if (!HTMLButtonElement.prototype.hasOwnProperty('commandForElement')) {
+        document.querySelector('[commandfor]').addEventListener('click', () => document.getElementById('dialog').showModal());
+        document.querySelector('[command="close"]').addEventListener('click', () => document.getElementById('dialog').close());
+    }
+    document.getElementById('dialog').addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) e.currentTarget.close();
+    });
+</script>
 </html>
