@@ -52,18 +52,19 @@
         }
 
         h1 {
-            font-size: 4rem;
+            font-size: clamp(1.5rem, 5vw, 4rem);
         }
 
         h2 {
-            font-size: 20rem;
-            margin: 30px 0;
+            font-size: clamp(6rem, 25vw, 20rem);
+            margin: 15px 0;
             color: #dc2626;
             font-weight: 900;
         }
 
         h3 {
-            font-size: 1.5rem;
+            text-align: center;
+            font-size: clamp(1rem, 3vw, 1.5rem);
         }
 
 
@@ -71,7 +72,8 @@
             text-align: center;
             border-top: 1px solid #ddd;
             margin-top: 10px;
-            padding: 20px 10px 0;
+            font-size: clamp(0.85rem, 2vw, 1rem);
+            padding: 20px clamp(10px, 5vw, 10px);
         }
 
         button {
@@ -107,6 +109,7 @@
         }
 
         dialog h3 {
+            text-align: left;
             margin-top: 0;
         }
 
@@ -148,9 +151,13 @@
 
         footer {
             margin-top: auto;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
+        footer p {
+            font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+            text-align: center;
+        }
 
     </style>
 </head>
@@ -187,7 +194,8 @@
         <h4>You'll build a distributed monolith.</h4>
         <p>
             Without rock-solid service boundaries (which take years to get right), you'll end up with the same tangled
-            mess ,except now your function calls go over the network. Kelsey Hightower said it best: instead of writing bad
+            mess ,except now your function calls go over the network. Kelsey Hightower said it best: instead of writing
+            bad
             code
             in one place, you end up building bad infrastructure and deploying the bad code on top of it.<br/>
             <a href="https://changelog.com/posts/monoliths-are-the-future" target="_blank">→ changelog.com</a>
@@ -230,8 +238,8 @@
 </dialog>
 
 <footer>
-    <small>This site was built by <a href="https://kiui.io">Antoine Guespin</a> without Kubernetes, Docker, Scrum, or a
-        single Jira ticket. He slept 8 hours.</small>
+    <p>This site was built by <a href="https://kiui.io">Antoine Guespin</a> without Kubernetes, Docker, Scrum, or a
+        single Jira ticket. He slept 8 hours.</p>
 </footer>
 </body>
 <script>
